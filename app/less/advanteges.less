@@ -1,0 +1,72 @@
+@import "mixins";
+@import "variables";
+
+.advanteges__wrapper {
+  .conteiner();
+
+  padding-top: 20px;
+
+}
+
+.advanteges__items {
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+.advanteges__item {
+  margin-bottom: 23px;
+  padding: 0 44px;
+  padding-top: 125px;
+}
+
+.advanteges__item:nth-child(n+2) {
+  display: none;
+}
+
+@media @tablet-width {
+  .advanteges__wrapper {
+    padding-top: 40px;
+  }
+
+  .advanteges__items {
+    padding-bottom: 4px;
+  }
+
+  .advanteges__item {
+    margin: 0 30px;
+    margin-bottom: 40px;
+    padding: 0;
+    padding-left: 130px;
+    padding-bottom: 40px;
+  }
+
+  .advanteges__item:nth-child(n+2) {
+    display: block;
+  }
+
+  .advanteges__item:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media @desctop-width {
+   .advanteges__items {
+     display: table;
+     width: 100%;
+   }
+
+  .advanteges__item {
+    display: table-cell;
+    width: 240px;
+    margin: 0;
+    padding: 0 40px;
+    padding-top: 130px;
+  }
+
+  .advanteges__item:nth-child(n+2) {
+    display: table-cell;
+  }
+
+}

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+</head>
+<body>
+    <header class="page-header">
+        <h1 class="visually-hidden">Барберишоп "Бородинский" - истинно мужская стрижка</h1>
+        <div class="page-header__logo">
+            <img src="img/logo.svg" alt="Барберишоп Бородинский" width="370" height="153">
+        </div>
+        <nav class="main-nav  main-nav--closed">
+            <a href="#" class="main-nav__toggle"></a>
+            <div class="main-nav__wrapper">
+                <ul class="main-nav__items">
+                    <li class="main-nav__item  main-nav__item--active"><a>Главная</a></li>
+                    <li class="main-nav__item"><a href="#">Наши работы</a></li>
+                    <li class="main-nav__item"><a href="#">Записаться</a></li>
+                    <li class="main-nav__item"><a href="#">Контакты</a></li>
+                    <li class="main-nav__item"><a href="#">HTML ACADEMY</a></li>
+                    <li class="main-nav__item"><a href="#">Наши работы</a></li>
+                </ul>
+                <ul class="main-nav__user-items">
+                    <li class="main-nav__user-item"><a href="#" class="main-nav__user-login" title="Войти">Вход</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="entry">
+        <form class="entry__form" action="" method="post" name="contact_form">
+            <h2 class="entry__title">Запись на стрижку</h2>
+            <input type="text" name="name" id="entry__name" value="Фамилия">
+            <input type="text" name="surname" id="entry__surname" value="Имя">
+            <input type="text" name="patronymic" id="entry__patronymic" value="Отчество">
+            <input type="tel" name="telephone" id="entry__telephone" value="Контактный телефон">
+            <input type="Email" name="Email" id="entry__email" value="Контактный e-mail">
+            <textarea name="info" id="entry__info" cols="30" rows="10">Доп. информация для мастера</textarea>
+            <div class="entry__beard-model">
+                <input type="radio" name="beard" id="beard__admiral" class="entry__checkbox-click">
+                <label for="beard__admiral">адмирал</label>
+                <input type="radio" name="beard" id="beard__lumberjack" class="entry__checkbox-click">
+                <label for="beard__lumberjack">лесоруб</label>
+                <input type="radio" name="beard" id="beard__polar-explorer" class="entry__checkbox-click">
+                <label for="beard__polar-explorer">полярник</label>
+                <input type="radio" name="beard" id="beard__boyar" class="entry__checkbox-click">
+                <label for="beard__boyar">Боярин</label>
+                <input type="radio" name="beard" id="beard__sage" class="entry__checkbox-click">
+                <label for="beard__sage">мудрец</label>
+            </div>
+            <div class="entry__additionals">
+                <input type="checkbox" name="additionals" id="radio1" class="entry__radio-click">
+                <label for="radio1">Подкарасить бороду</label>
+                <input type="checkbox" name="additionals" id="radio2" class="entry__radio-click">
+                <label for="radio2">Накрутить усы</label>
+                <input type="checkbox" name="additionals" id="radio3" class="entry__radio-click">
+                <label for="radio3">Причесать бороду</label>
+                <input type="checkbox" name="additionals" id="radio4" class="entry__radio-click">
+                <label for="radio4">Подровнять виски</label>
+                <input type="checkbox" name="additionals" id="radio5" class="entry__radio-click">
+                <label for="radio5">Убрать середину</label>
+                <input type="checkbox" name="additionals" id="radio6" class="entry__radio-click">
+                <label for="radio6">Отполировать лысину</label>
+            </div>
+            <input type="button" class="entry__button  btn" value="Отправить заявку">
+        </form>
+        <footer class="page-footer">
+            <div class="page-footer__wrapper">
+                <p class="page-footer__contacts">
+                    <b>Барберишоп Бородинский</b><br>
+                    г. Санкт-Петербург, ул. Большая Конюшенная19/8<br>
+                    <a href="tel:+777777777"><span class="page-footer__contacts-hidden">Тел:</span>+7 (777) 777-77-77</a>
+                </p>
+                <p class="page-footer__social">
+                <span class="social-links">
+                    <a class="social-link  social-link--vk" href="#">Мы в Контакте!</a>
+                    <a class="social-link  social-link--fb" href="#">Мы в Фейсбуке!</a>
+                    <a class="social-link  social-link--in" href="#">Мы в Инстаграме!</a>
+                </span>
+                </p>
+                <p class="page-footer__copyright">
+                    Разработано:
+                    <a class="btn  page-footer__copyright-link" href="#">HTML ACADEMY</a>
+                </p>
+            </div>
+        </footer>
+    </section>
+</body>
+</html>
