@@ -4,7 +4,7 @@
 .main-nav {
   position: relative;
 
-  width: 320px;
+  width: auto;
   min-height: 50px;
   margin: 0 auto;
 
@@ -48,13 +48,13 @@
 
   background-color: #ffffff;
   box-shadow: 0 8px 0 0 #ffffff,
-              0 16px 0 0 #ffffff;
+  0 16px 0 0 #ffffff;
 }
 
 .main-nav--closed .main-nav__toggle:active::before {
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 0 0 rgba(255, 255, 255, 0.3),
-              0 16px 0 0 rgba(255, 255, 255, 0.3);
+  0 16px 0 0 rgba(255, 255, 255, 0.3);
 }
 
 .main-nav--opened .main-nav__toggle {
@@ -97,9 +97,6 @@
   padding: 0;
 
   list-style: none;
-}
-
-.main-nav__items {
   font-weight: bold;
 }
 
@@ -146,8 +143,8 @@
   &::after {
     position: absolute;
     content: "";
-    top: 17px;
-    left: 20px;
+    top: 15px;
+    left: 12px;
 
     width: 16px;
     height: 16px;
@@ -237,8 +234,13 @@
   }
 
   .main-nav__wrapper {
-    .conteiner();
-    .clearfix();
+    .conteiner-fluid();
+
+    display: flex;
+    justify-content: space-between;
+
+    outline: 1px solid red;
+    outline-offset: 3px;
   }
 
   .main-nav__toggle {
@@ -246,17 +248,21 @@
   }
 
   .main-nav__items {
-    float: left;
-    width: 570px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: space-between;
+
+    outline: 1px solid yellow;
   }
 
   .main-nav__user-items {
-    float: right;
     width: 60px;
+
+    outline: 1px solid yellow;
   }
 
   .main-nav__item {
-    float: left;
     margin-right: 32px;
 
     &:last-child {
@@ -264,13 +270,23 @@
     }
   }
 
-  .main-nav__item a {
+  .main-nav__item a,
+  .main-nav__user-item a {
     padding: 0;
     padding-top: 25px;
     padding-bottom: 23px;
 
     background: none;
     border: none;
+  }
+
+  .main-nav__user-login {
+    font-size: 0;
+
+    &::after {
+      top: 30px;
+      right: 30px;
+    }
   }
 
   .main-nav__item a[href] {
@@ -288,10 +304,31 @@
 
 @media @desctop-width {
   .main-nav__items {
-    width: 780px;
+    justify-content: space-around;
+
+  }
+
+  .main-nav__item {
+    margin-right: 65px;
+
   }
 
   .main-nav__user-items {
+    box-sizing: border-box;
     width: 160px;
   }
+
+  .main-nav__user-item a {
+    padding-left: 90px;
+  }
+
+  .main-nav__user-login {
+    font-size: 18px;
+    text-transform: uppercase;
+
+    &::after {
+      left: 60px;
+    }
+  }
+
 }

@@ -2,64 +2,283 @@
 @import "mixins";
 
 .stats {
-  outline: 2px solid red;
-  .conteiner();
+  .conteiner-fluid();
 }
 
 .stats__header {
-  outline: 2px solid green;
-
   padding-top: 27px;
   padding-right: 38px;
   padding-bottom: 26px;
   padding-left: 38px;
+
+  background-color: #ffffff;
+
+  color: #000000;
+}
+
+.stats__legend {
+  display: block;
+
+  font-size: 20px;
+  line-height: 27px;
+
+  &--bottom {
+    padding-top: 20px;
+    padding-bottom: 14px;
+
+    text-align: center;
+    color: #717171;
+  }
+
+  &--top {
+    display: none;
+  }
+}
+
+.stats__slogan {
+  display: block;
+  margin-bottom: 16px;
+
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.stats__intro {
+  margin: 0;
+  font-size: 20px;
+  line-height: 27px;
+  text-align: center;
 }
 
 .stats__items {
  width: 100%;
+  border-collapse: collapse;
 }
 
+.stats__items tr {
+  color: #ffffff;
+
+  background-color: #404040;
+
+  &:nth-child(2) {
+    background-color: #4e4e4e;
+  }
+
+  &:nth-child(3) {
+    background-color: #353535;
+  }
+
+  &:nth-child(4) {
+    background-color: #404040;
+  }
+}
+
+.stats__value,
+.stats__field {
+  width: 50%;
+  padding: 20px;
+  padding-bottom: 19px;
+
+  vertical-align: top;
+}
+
+.stats__value {
+  padding-right: 0;
+
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: bold;
+}
+
+.stats__value sup {
+  top: -0.35em;
+
+  margin-left: 5px;
+}
+
+.stats__field {
+  padding-left: 0;
+
+  font-size: 18px;
+  line-height: 18px;
+  text-align: right;
+}
+
+
+
 @media @tablet-width {
+
   .stats {
     position: relative;
     z-index: 1;
 
-    margin-top: -185px;
+    margin-top: -188px;
   }
 
   .stats__header {
-    .clearfix();
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    position: relative;
 
     padding: 0;
     padding-top: 31px;
     padding-bottom: 24px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 27px;
+      left: -15px;
+
+      border: 15px solid transparent;
+      border-bottom-color: #ffffff;
+      transform: rotate(46deg);
+    }
+  }
+
+  .stats__slogan {
+
+    width: 50%;
+    box-sizing: border-box;
+    padding-left: 40px;
+    padding-bottom: 20px;
+    margin: 0;
+
+    font-size: 40px;
+    line-height: 40px;
+    text-transform: none;
+    text-align: left;
+
+  }
+
+  .stats__intro {
+
+    width: 37%;
+    box-sizing: border-box;
+    padding: 0;
+    padding-left: 32px;
+
+
+    font-size: 20px;
+    line-height: 27px;
+    text-align: left;
+  }
+
+  .stats__legend--top {
+    display: block;
+    box-sizing: border-box;
+    padding-left: 40px;
+
+    color: #cacaca;
+  }
+
+  .stats__legend--bottom {
+    display: none;
   }
 
   .stats__items {
-    .clearfix();
-
     display: block;
   }
+
+  .stats__items tbody {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .stats__items tr {
+    display: block;
+    box-sizing: border-box;
+    width: 50%;
+
+    padding: 25px 35px;
+    padding-bottom: 28px;
+  }
+
+  .stats__value,
+  stats__field {
+    display: block;
+    width: auto;
+    padding: 0;
+  }
+
+  .stats__value {
+    margin-bottom: 7px;
+
+    font-size: 72px;
+    line-height: 72px;
+    text-align: left;
+  }
+
+  .stats__field {
+    padding: 0;
+
+    font-size: 20px;
+    line-height: 27px;
+    text-align: left;
+  }
+
+  .stats__field br {
+    display: none;
+  }
+
+
+
+
 }
 
 @media @desctop-width {
   .stats {
-    .clearfix();
+   display: flex;
 
     margin-top: -160px;
   }
 
   .stats__header {
-    float: left;
-    width: 240px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 320px;
     padding-left: 40px;
     padding-right: 40px;
+
+    min-height: 318px;
   }
 
   .stats__items {
-    float: right;
-    display: block;
+    box-sizing: border-box;
+    display: flex;
     width: 640px;
   }
+
+  .stats__slogan {
+    width: auto;
+
+    margin-bottom: 42px;
+    padding-left: 0;
+    padding-bottom: 0;
+
+
+  }
+
+  .stats__intro {
+    width: auto;
+
+    margin-bottom: 25px;
+    padding-left: 0;
+    padding-right: 35px;
+
+  }
+
+  .stats__legend--top {
+    padding-left: 0;
+
+    margin-top: auto;
+  }
+
 
 }

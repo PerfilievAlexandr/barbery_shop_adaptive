@@ -16,6 +16,17 @@
   }
 
   @media @desctop-width {
-    width: 950px;
+    width: 960px;
+  }
+}
+
+.conteiner-fluid() {
+  width: auto;
+
+  @media @tablet-width {
+    width: 92%; /* 640px / 768px ~= 84% */
+    max-width: 960px;
+
+    margin: 0 auto;
   }
 }

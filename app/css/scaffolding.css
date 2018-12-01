@@ -1,7 +1,29 @@
+@font-face {
+  font-weight: normal;
+  font-family: "PT Sans Narrow";
+  font-style: normal;
+  @font-face {
+    font-family: 'PT Sans Narrow';
+    font-style: normal;
+    font-weight: 400;
+    src: local('PT Sans Narrow'), local('PTSans-Narrow'), url(https://fonts.gstatic.com/s/ptsansnarrow/v9/BngRUXNadjH0qYEzV7ab-oWlsbCCwRg.ttf) format('truetype');
+  }
+  @font-face {
+    font-family: 'PT Sans Narrow';
+    font-style: normal;
+    font-weight: 700;
+    src: local('PT Sans Narrow Bold'), local('PTSans-NarrowBold'), url(https://fonts.gstatic.com/s/ptsansnarrow/v9/BngSUXNadjH0qYEzV7ab-oWlsbg95AiBW_g.ttf) format('truetype');
+  }
+}
+@font-face {
+  font-weight: 700;
+  font-family: "PT Sans Narrow";
+  font-style: normal;
+}
 body {
   font-size: 18px;
   line-height: 27px;
-  font-family: Arial, sans-serif;
+  font-family: "PT Sans Narrow", Arial, sans-serif;
   color: #f7f4f1;
   font-style: normal;
   background-color: #292929;

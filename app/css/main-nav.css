@@ -1,6 +1,6 @@
 .main-nav {
   position: relative;
-  width: 320px;
+  width: auto;
   min-height: 50px;
   margin: 0 auto;
   background-color: #826550;
@@ -69,8 +69,6 @@
   margin: 0;
   padding: 0;
   list-style: none;
-}
-.main-nav__items {
   font-weight: bold;
 }
 .main-nav__item a {
@@ -106,8 +104,8 @@
 .main-nav__user-login::after {
   position: absolute;
   content: "";
-  top: 17px;
-  left: 20px;
+  top: 15px;
+  left: 12px;
   width: 16px;
   height: 16px;
   background-image: url("../img/login.png");
@@ -174,38 +172,46 @@
     background-color: black;
   }
   .main-nav__wrapper {
-    width: 320px;
-    margin: 0 auto;
-  }
-  .main-nav__wrapper::after {
-    content: "";
-    display: table;
-    clear: both;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    outline: 1px solid red;
+    outline-offset: 3px;
   }
   .main-nav__toggle {
     display: none;
   }
   .main-nav__items {
-    float: left;
-    width: 570px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: space-between;
+    outline: 1px solid yellow;
   }
   .main-nav__user-items {
-    float: right;
     width: 60px;
+    outline: 1px solid yellow;
   }
   .main-nav__item {
-    float: left;
     margin-right: 32px;
   }
   .main-nav__item:last-child {
     margin-right: 0;
   }
-  .main-nav__item a {
+  .main-nav__item a,
+  .main-nav__user-item a {
     padding: 0;
     padding-top: 25px;
     padding-bottom: 23px;
     background: none;
     border: none;
+  }
+  .main-nav__user-login {
+    font-size: 0;
+  }
+  .main-nav__user-login::after {
+    top: 30px;
+    right: 30px;
   }
   .main-nav__item a[href]:hover {
     color: #826550;
@@ -219,19 +225,31 @@
 }
 @media (min-width: 768px) and (min-width: 768px) {
   .main-nav__wrapper {
-    width: 640px;
-  }
-}
-@media (min-width: 768px) and (min-width: 1200px) {
-  .main-nav__wrapper {
-    width: 950px;
+    width: 92%;
+    /* 640px / 768px ~= 84% */
+    max-width: 960px;
+    margin: 0 auto;
   }
 }
 @media (min-width: 1200px) {
   .main-nav__items {
-    width: 780px;
+    justify-content: space-around;
+  }
+  .main-nav__item {
+    margin-right: 65px;
   }
   .main-nav__user-items {
+    box-sizing: border-box;
     width: 160px;
+  }
+  .main-nav__user-item a {
+    padding-left: 90px;
+  }
+  .main-nav__user-login {
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+  .main-nav__user-login::after {
+    left: 60px;
   }
 }
