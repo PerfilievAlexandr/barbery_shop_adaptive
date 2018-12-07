@@ -1,5 +1,7 @@
 .reviews__wrapper {
   width: auto;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 60px;
   background-color: #ffffff;
   color: #000000;
@@ -46,13 +48,19 @@
   font-weight: bold;
 }
 .reviews__item p {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 30px;
+}
+.slider__toggles::after {
+  border: 1px solid #000000;
 }
 @media (min-width: 768px) {
   .reviews__wrapper {
     position: relative;
+    box-sizing: border-box;
     padding-bottom: 70px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
   .reviews__title {
     padding-top: 45px;

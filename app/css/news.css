@@ -100,14 +100,12 @@
 @media (min-width: 768px) {
   .news {
     position: relative;
-    padding-bottom: 30px;
   }
   .news__wraper {
     box-sizing: border-box;
     padding-top: 90px;
     padding-left: 50px;
     padding-right: 50px;
-    margin-bottom: 55px;
     border: 1px solid #e5ddd5;
   }
   .news__items {

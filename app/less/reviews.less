@@ -4,6 +4,8 @@
 .reviews__wrapper {
 
   .conteiner-fluid();
+  padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 60px;
 
   background-color: #ffffff;
@@ -55,14 +57,22 @@
 }
 
 .reviews__item p {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 30px;
+}
+
+.slider__toggles::after {
+  border: 1px solid #000000;
 }
 
 @media @tablet-width {
   .reviews__wrapper {
     position: relative;
+    box-sizing: border-box;
+
     padding-bottom: 70px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
   .reviews__title {
