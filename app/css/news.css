@@ -86,12 +86,14 @@
 }
 .btn {
   display: block;
+  box-sizing: border-box;
   font-size: 18px;
   line-height: 24px;
   text-transform: uppercase;
   font-weight: bold;
   margin: 0 20px;
   padding: 15px 0;
+  min-width: 160px;
   text-align: center;
   text-decoration: none;
   color: #000000;
@@ -102,6 +104,7 @@
     position: relative;
   }
   .news__wraper {
+    position: relative;
     box-sizing: border-box;
     padding-top: 90px;
     padding-left: 50px;
@@ -133,15 +136,11 @@
   .news__to-all {
     position: absolute;
     display: inline-block;
-    min-width: 160px;
     top: 90px;
-    right: 10%;
+    right: 30px;
   }
 }
 @media (min-width: 1200px) {
-  .news {
-    padding-bottom: 32px;
-  }
   .news__wraper {
     padding-top: 120px;
   }
@@ -159,6 +158,6 @@
   }
   .news__to-all {
     top: 120px;
-    right: 230px;
+    right: 30px;
   }
 }
