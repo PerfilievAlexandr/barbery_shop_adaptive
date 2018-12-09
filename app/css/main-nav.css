@@ -175,8 +175,6 @@
     width: auto;
     display: flex;
     justify-content: space-between;
-    outline: 1px solid red;
-    outline-offset: 3px;
   }
   .main-nav__toggle {
     display: none;
@@ -186,11 +184,9 @@
     flex-wrap: wrap;
     flex-grow: 1;
     justify-content: space-between;
-    outline: 1px solid yellow;
   }
   .main-nav__user-items {
     width: 60px;
-    outline: 1px solid yellow;
   }
   .main-nav__item {
     margin-right: 32px;
@@ -215,7 +211,7 @@
   }
   .main-nav__item a[href]:hover {
     color: #826550;
-    background-color: black;
+    background-color: #ffffff;
   }
   .main-nav__item a[href]:active {
     color: #ffffff;
