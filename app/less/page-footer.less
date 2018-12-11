@@ -1,11 +1,6 @@
 @import "variables";
 @import "mixins";
 
-.page-footer {
-  border-top: 1px solid #3e3e3e;
-  border-bottom: 1px solid #3e3e3e;
-}
-
 .page-footer__wrapper {
   .conteiner-fluid();
 
@@ -13,6 +8,9 @@
   padding-bottom: 25px;
 
   text-align: center;
+
+  border-top: 1px solid #3e3e3e;
+  border-bottom: 1px solid #3e3e3e;
 }
 
 .page-footer__contacts {
@@ -113,12 +111,9 @@
 @media @tablet-width {
   .page-footer__wrapper {
     position: relative;
-    box-sizing: border-box;
 
     padding-top: 55px;
     padding-bottom: 55px;
-    padding-left: 50px;
-    padding-right: 50px;
 
     text-align: left;
   }
@@ -140,8 +135,8 @@
     position: absolute;
 
     text-align: center;
-    top:55px;
-    right: 50px;
+    top: 55px;
+    right: 0;
   }
 
   .page-footer__copyright-link {

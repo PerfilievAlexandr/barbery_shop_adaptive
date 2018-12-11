@@ -12,6 +12,7 @@
 .advanteges__wrapper::after {
   content: "";
   position: absolute;
+  width: 50%;
 
   bottom: -40px;
   right: 0;
@@ -20,6 +21,7 @@
   border-top: 0px solid transparent;
   border-right: 0px solid transparent;
   border-left:  300px solid rgb(119, 39, 32);
+
 }
 
 .advanteges__items {
@@ -113,10 +115,12 @@
   border: 1px solid #ffffff;
 
   transform: rotate(45deg);
+  cursor: pointer;
 }
 
 .slider__toggle--active {
   background-color: #ffffff;
+  cursor: auto;
 }
 
 
@@ -173,7 +177,11 @@
 }
 
 @media @desctop-width {
-   .advanteges__items {
+  .advanteges__wrapper {
+    margin: 0 auto;
+  }
+
+  .advanteges__items {
      display: table;
      width: 100%;
    }

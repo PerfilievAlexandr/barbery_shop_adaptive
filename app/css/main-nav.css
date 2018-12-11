@@ -1,9 +1,18 @@
 .main-nav {
+  width: 100%;
   position: relative;
   width: auto;
   min-height: 50px;
   margin: 0 auto;
   background-color: #826550;
+}
+@media (min-width: 768px) {
+  .main-nav {
+    width: 84%;
+    /* 640px / 768px ~= 84% */
+    max-width: 960px;
+    margin: 0 auto;
+  }
 }
 .main-nav__toggle {
   position: absolute;
@@ -100,6 +109,7 @@
   line-height: 24px;
   color: #ffffff;
   text-decoration: none;
+  font-weight: normal;
 }
 .main-nav__user-login::after {
   position: absolute;
@@ -132,7 +142,6 @@
     right: 0;
     left: 70px;
     z-index: 10;
-    height: 80vh;
     background-color: #6a4d38;
   }
   .main-nav--opened .main-nav__wrapper::before {
@@ -167,12 +176,11 @@
 }
 @media (min-width: 768px) {
   .main-nav {
-    width: auto;
-    margin: 0;
+    width: 100%;
     background-color: black;
   }
   .main-nav__wrapper {
-    width: auto;
+    width: 100%;
     display: flex;
     justify-content: space-between;
   }
@@ -186,13 +194,7 @@
     justify-content: space-between;
   }
   .main-nav__user-items {
-    width: 60px;
-  }
-  .main-nav__item {
-    margin-right: 32px;
-  }
-  .main-nav__item:last-child {
-    margin-right: 0;
+    width: 70px;
   }
   .main-nav__item a,
   .main-nav__user-item a {
@@ -202,12 +204,24 @@
     background: none;
     border: none;
   }
+  .main-nav__item--active {
+    position: relative;
+  }
+  .main-nav__item--active::after {
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #826550;
+  }
   .main-nav__user-login {
     font-size: 0;
   }
   .main-nav__user-login::after {
     top: 30px;
-    right: 30px;
+    left: 30px;
   }
   .main-nav__item a[href]:hover {
     color: #826550;
@@ -221,18 +235,19 @@
 }
 @media (min-width: 768px) and (min-width: 768px) {
   .main-nav__wrapper {
-    width: 92%;
+    width: 84%;
     /* 640px / 768px ~= 84% */
     max-width: 960px;
     margin: 0 auto;
   }
 }
 @media (min-width: 1200px) {
+  .main-nav {
+    width: 960px;
+    margin: 0 auto;
+  }
   .main-nav__items {
     justify-content: space-around;
-  }
-  .main-nav__item {
-    margin-right: 65px;
   }
   .main-nav__user-items {
     box-sizing: border-box;

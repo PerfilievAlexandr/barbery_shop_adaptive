@@ -1,12 +1,12 @@
 .advanteges__wrapper {
-  width: auto;
+  width: 100%;
   position: relative;
   padding-top: 20px;
   padding-bottom: 60px;
 }
 @media (min-width: 768px) {
   .advanteges__wrapper {
-    width: 92%;
+    width: 84%;
     /* 640px / 768px ~= 84% */
     max-width: 960px;
     margin: 0 auto;
@@ -15,6 +15,7 @@
 .advanteges__wrapper::after {
   content: "";
   position: absolute;
+  width: 50%;
   bottom: -40px;
   right: 0;
   border: 40px solid transparent;
@@ -89,9 +90,11 @@
   height: 10px;
   border: 1px solid #ffffff;
   transform: rotate(45deg);
+  cursor: pointer;
 }
 .slider__toggle--active {
   background-color: #ffffff;
+  cursor: auto;
 }
 @media (min-width: 768px) {
   .advanteges__wrapper {
@@ -134,6 +137,9 @@
   }
 }
 @media (min-width: 1200px) {
+  .advanteges__wrapper {
+    margin: 0 auto;
+  }
   .advanteges__items {
     display: table;
     width: 100%;

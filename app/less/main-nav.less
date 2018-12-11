@@ -2,6 +2,8 @@
 @import "mixins";
 
 .main-nav {
+  .conteiner-fluid();
+
   position: relative;
 
   width: auto;
@@ -139,6 +141,7 @@
   line-height: 24px;
   color: #ffffff;
   text-decoration: none;
+  font-weight: normal;
 
   &::after {
     position: absolute;
@@ -179,8 +182,6 @@
     right: 0;
     left: 70px;
     z-index: 10;
-
-    height: 80vh;
 
     background-color: #6a4d38;
   }
@@ -227,10 +228,10 @@
 
 @media @tablet-width {
   .main-nav {
-    width: auto;
-    margin: 0;
+    width: 100%;
 
     background-color: black;
+
   }
 
   .main-nav__wrapper {
@@ -252,15 +253,7 @@
   }
 
   .main-nav__user-items {
-    width: 60px;
-  }
-
-  .main-nav__item {
-    margin-right: 32px;
-
-    &:last-child {
-      margin-right: 0;
-    }
+    width: 70px;
   }
 
   .main-nav__item a,
@@ -273,12 +266,29 @@
     border: none;
   }
 
+  .main-nav__item--active {
+    position: relative;
+  }
+
+  .main-nav__item--active::after {
+      position: absolute;
+      content: "";
+      bottom: -3px;
+      left: 0;
+
+
+      width: 100%;
+      height: 3px;
+      background-color: #826550;
+
+  }
+
   .main-nav__user-login {
     font-size: 0;
 
     &::after {
       top: 30px;
-      right: 30px;
+      left: 30px;
     }
   }
 
@@ -296,13 +306,13 @@
 }
 
 @media @desctop-width {
-  .main-nav__items {
-    justify-content: space-around;
-
+  .main-nav {
+    width: 960px;
+    margin: 0 auto;
   }
 
-  .main-nav__item {
-    margin-right: 65px;
+  .main-nav__items {
+    justify-content: space-around;
 
   }
 

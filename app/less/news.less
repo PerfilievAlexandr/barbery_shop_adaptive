@@ -1,6 +1,11 @@
 @import "variables";
 @import "mixins";
 
+.news {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5ddd5;
+}
+
 .news__wraper {
   .conteiner-fluid();
 
@@ -8,8 +13,6 @@
   padding-bottom: 30px;
 
   color: #000000;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e5ddd5;
 }
 
 .news__title {
@@ -55,22 +58,21 @@
   }
 }
 
-   .news__date::before {
-    content: "";
-    position: absolute;
+.news__date::before {
+  content: "";
+  position: absolute;
 
-    bottom: -10px;
-    left: 0;
+  bottom: -10px;
+  left: 0;
 
-    border: 10px solid transparent;
-    border-top: 0px solid transparent;
-    border-left: 0px solid transparent;
-    border-right:  25px solid #000000;
-
+  border: 10px solid transparent;
+  border-top: 0px solid transparent;
+  border-left: 0px solid transparent;
+  border-right: 25px solid #000000;
 
 }
 
-.news__date b{
+.news__date b {
   margin-top: 10px;
   font-size: 30px;
 
@@ -125,19 +127,12 @@
 }
 
 @media @tablet-width {
-  .news {
-    position: relative;
-
-  }
 
   .news__wraper {
     position: relative;
     box-sizing: border-box;
     padding-top: 90px;
-    padding-left: 50px;
-    padding-right: 50px;
 
-    border: 1px solid #e5ddd5;
   }
 
   .news__items {
@@ -150,7 +145,6 @@
     width: 50%;
     margin: 0;
     border-bottom: none;
-
 
     vertical-align: top;
     font-size: 18px;
@@ -166,21 +160,27 @@
     margin-bottom: 65px;
   }
 
-  .news__item:first-child  p {
+  .news__item:first-child p {
     margin-right: 45px;
   }
 
   .news__to-all {
     position: absolute;
 
+    margin: 0;
     display: inline-block;
 
     top: 90px;
-    right: 30px;
+    right: 0;
   }
 }
 
 @media @desctop-width {
+
+  .news {
+    width: 1200px;
+    margin: 0 auto;
+  }
 
   .news__wraper {
     padding-top: 120px;
@@ -194,7 +194,7 @@
     width: 33%;
   }
 
-  .news__item:nth-child(n + 1)  p {
+  .news__item:nth-child(n + 1) p {
     margin-right: 45px;
   }
 

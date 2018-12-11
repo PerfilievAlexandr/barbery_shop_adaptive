@@ -1,9 +1,9 @@
 .stats {
-  width: auto;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .stats {
-    width: 92%;
+    width: 84%;
     /* 640px / 768px ~= 84% */
     max-width: 960px;
     margin: 0 auto;
@@ -178,6 +178,7 @@
 @media (min-width: 1200px) {
   .stats {
     display: flex;
+    margin: 0 auto;
     margin-top: -160px;
   }
   .stats__header {
