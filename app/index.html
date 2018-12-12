@@ -133,7 +133,15 @@
     <div class="reviews__items">
       <blockquote class="reviews__item  slider__item">
         <div class="reviews__author-photo">
-          <img src="img/pick-travis.png" width="50" height="49" alt="Фото Трэвиса Баркера">
+          <picture>
+            <source media="(min-width: 1200px)"
+                    srcset="img/pick-travis-desktop.jpg"
+            />
+            <source media="(min-width: 768px)"
+                    srcset="img/pick-travis-tablet.png"
+            />
+            <img src="img/pick-travis.png" alt="Фото Трэвиса Баркера">
+          </picture>
         </div>
         <cite class="reviews__author-name">Трэвис Баркер</cite>
         <p>Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую тату.</p>
