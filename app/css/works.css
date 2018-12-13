@@ -26,7 +26,7 @@
   margin-top: 0;
   text-align: center;
 }
-.works btn {
+.works__wrapper .btn {
   display: none;
 }
 .work {
@@ -165,8 +165,15 @@
 }
 @media (min-width: 1200px) {
   .works__wrapper {
+    position: relative;
     justify-content: space-between;
     align-items: normal;
+  }
+  .works .btn {
+    position: absolute;
+    right: 0;
+    top: 100px;
+    margin-right: 0;
   }
   .works__title {
     margin-bottom: 90px;

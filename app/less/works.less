@@ -26,7 +26,7 @@
   text-align: center;
 }
 
-.works btn {
+.works__wrapper .btn {
   display: none;
 }
 
@@ -207,9 +207,18 @@
 @media @desctop-width {
 
   .works__wrapper {
+    position: relative;
+
     justify-content: space-between;
     align-items: normal;
+  }
 
+  .works .btn {
+    position: absolute;
+    right: 0;
+    top: 100px;
+
+    margin-right: 0;
   }
 
   .works__title {

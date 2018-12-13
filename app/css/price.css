@@ -1,0 +1,155 @@
+.price__wrapper {
+  width: 100%;
+  padding-top: 75px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+}
+@media (min-width: 768px) {
+  .price__wrapper {
+    width: 84%;
+    /* 640px / 768px ~= 84% */
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
+.price__title {
+  margin-top: 0;
+  margin-bottom: 32px;
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+.price__items {
+  width: 100%;
+  font-size: 20px;
+  line-height: 27px;
+}
+.price__items tbody {
+  display: flex;
+  flex-direction: column;
+}
+.price__item-number {
+  display: none;
+}
+.price__items tr {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.price__additional-services {
+  order: 3;
+}
+.price__additional-services {
+  width: 100%;
+}
+.price__amanities {
+  font-weight: bold;
+}
+.price__discount {
+  position: relative;
+  padding-left: 110px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 1px solid #484848;
+}
+.price__discount::after {
+  position: absolute;
+  content: "";
+  width: 58px;
+  height: 57px;
+  background-image: url("../img/clock-illustration.png");
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (min-width: 768px) {
+  .price__title {
+    text-align: left;
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 50px;
+  }
+  .price__items {
+    border-collapse: collapse;
+    margin-bottom: 10px;
+  }
+  .price__items tbody {
+    display: table-row-group;
+  }
+  .price__items tr {
+    display: table-row;
+  }
+  .price__items td {
+    display: table-cell;
+    border: 1px solid #5e5e5e;
+    padding: 15px 19px;
+  }
+  .price__additional-services {
+    width: auto;
+  }
+  .price__discount-sale {
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .price__discount-sale br {
+    display: none;
+  }
+  .price__discount::after {
+    content: "";
+    width: 71px;
+    height: 71px;
+    background-image: url("../img/clock-illustration-tablet.png");
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+@media (min-width: 1200px) {
+  .price__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .price__title {
+    width: 100%;
+  }
+  .price__items {
+    width: 648px;
+    margin-bottom: 0;
+  }
+  .price__discount {
+    padding: 0;
+    padding-top: 200px;
+    padding-bottom: 25px;
+    width: 275px;
+    box-sizing: border-box;
+  }
+  .price__discount-sale br {
+    display: inline;
+  }
+  .price__discount-sale {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 20px;
+    line-height: 27px;
+    text-transform: none;
+    font-weight: normal;
+  }
+  .price__discount::after {
+    width: 140px;
+    height: 140px;
+    background-image: url("../img/clock-illustration-desctop.png");
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
