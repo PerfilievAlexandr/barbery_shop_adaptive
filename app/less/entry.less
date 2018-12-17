@@ -2,18 +2,20 @@
 @import "variables";
 
 .entry {
-  .conteiner-fluid();
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 75px;
-  box-sizing: border-box;
-
   background-color: #f8f5f2;
 }
 
 .entry__form {
+  .conteiner-fluid();
+  position: relative;
+
   display: flex;
   flex-direction: column;
+
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 75px;
+  box-sizing: border-box;
 
   color: #000000;
 
@@ -29,8 +31,12 @@
   text-transform: uppercase;
 }
 
+.entry__to-all {
+  display: none;
+}
+
 .entry__form input,
-.entry__form textarea{
+.entry__form textarea {
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 14px;
@@ -43,8 +49,8 @@
 
 }
 
-.entry__form input:nth-child(4),
-.entry__form input:nth-child(6){
+.entry__form input:nth-child(5),
+.entry__form input:nth-child(7) {
   margin-bottom: 30px;
 }
 
@@ -58,9 +64,8 @@
   margin-bottom: 50px;
 }
 
-
 .entry__beard-model-title,
-.entry__additionals-title{
+.entry__additionals-title {
   margin-top: 0;
   margin-bottom: 40px;
   flex-basis: 100%;
@@ -114,7 +119,7 @@
 
 }
 
-.entry__beard-model-admiral::after{
+.entry__beard-model-admiral::after {
   position: absolute;
   width: 52px;
   height: 49px;
@@ -128,7 +133,7 @@
   background-image: url("../img/beard-1.png");
 }
 
-.entry__beard-model-lumberjack::after{
+.entry__beard-model-lumberjack::after {
   position: absolute;
   width: 56px;
   height: 68px;
@@ -142,7 +147,7 @@
   background-image: url("../img/beard-2.png");
 }
 
-.entry__beard-model-explorer::after{
+.entry__beard-model-explorer::after {
   position: absolute;
   width: 64px;
   height: 78px;
@@ -156,7 +161,7 @@
   background-image: url("../img/beard-3.png");
 }
 
-.entry__beard-model-boyar::after{
+.entry__beard-model-boyar::after {
   position: absolute;
   width: 58px;
   height: 98px;
@@ -170,7 +175,7 @@
   background-image: url("../img/beard-4.png");
 }
 
-.entry__beard-model-sage::after{
+.entry__beard-model-sage::after {
   position: absolute;
   width: 46px;
   height: 105px;
@@ -236,12 +241,140 @@
   z-index: 2;
 }
 
- .entry .entry__button {
+.entry__button {
   margin-left: 0;
   margin-right: 0;
 
   background-color: #826550;
   color: #ffffff;
+}
+
+@media @tablet-width {
+
+  .entry__form {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .entry__title {
+    margin-left: 0;
+    margin-top: 65px;
+    margin-bottom: 75px;
+    margin-right: 0;
+    width: 100%;
+
+    padding-right: 150px;
+
+    font-size: 40px;
+    line-height: 40px;
+
+    text-align: start;
+  }
+
+  .entry__to-all {
+    position: absolute;
+    top: 60px;
+    right: 0;
+
+    margin-right: 0;
+    margin-left: 0;
+
+    color: #000000;
+  }
+
+  #entry__name,
+  #entry__surname,
+  #entry__patronymic{
+    width: 33.33%;
+    box-sizing: border-box;
+    margin-bottom: 0;
+  }
+
+  #entry__name,
+  #entry__surname {
+    border-right: none;
+  }
+
+
+  #entry__telephone,
+  #entry__email,
+  #entry__info{
+    width: 100%;
+
+    margin-top: 35px;
+    margin-bottom: 0;
+  }
+
+  #entry__info {
+    margin-bottom: 55px;
+  }
+
+  .entry__beard-model {
+    width: 100%;
+  }
+
+  .entry__beard-model-title {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .entry__beard-model label {
+    flex-basis: 20%;
+  }
+
+  .entry__additionals {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+  }
+
+  .entry__additionals-title {
+    flex-basis: 100%;
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+
+  .entry__additionals label {
+    flex-basis: 50%;
+    box-sizing: border-box;
+  }
+
+  .entry__button {
+    flex-basis: 100%;
+  }
+}
+
+@media @desctop-width {
+
+  #entry__name,
+  #entry__surname,
+  #entry__patronymic {
+    flex-basis: 30.5%;
+  }
+
+  #entry__name,
+  #entry__surname {
+    margin-right: 40px;
+    border-right: 1px solid #e5ddd5;
+  }
+
+  #entry__telephone,
+  #entry__email {
+    flex-basis: 43.5%;
+  }
+
+  #entry__telephone {
+    margin-right: 40px;
+  }
+
+  .entry__additionals label {
+    flex-basis: 33.3%;
+  }
 }
 
 
