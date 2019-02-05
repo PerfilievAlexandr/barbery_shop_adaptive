@@ -1,0 +1,167 @@
+@import "variables";
+
+.login-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  min-height: 100%;
+
+  z-index: 100;
+
+  background-color: rgba(0, 0, 0, 0.5);;
+}
+
+.login-form--closed {
+  display: none;
+}
+
+.login-form__close-btn {
+  position: relative;
+  width: 50px;
+  height: 50px;
+
+  top: -50px;
+  left: 100%;
+  z-index: 150;
+
+  &::after, &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    top: 23px;
+    left: 0;
+    background: black;
+  }
+}
+
+.login-form__close-btn::after {
+  transform: rotate(45deg);
+}
+
+.login-form__close-btn::before {
+  transform: rotate(-45deg);
+}
+
+
+
+.login-form__form-fields {
+  margin: 0 auto;
+  margin-top: 100px;
+
+  width: 80%;
+
+  padding: 70px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  color: black;
+  background-color: #ffffff;
+}
+
+.login-form__tittle {
+  margin: 0;
+  flex-basis: 100%;
+
+  text-align: center;
+
+
+
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+
+}
+
+.login-form__ask {
+  flex-basis: 100%;
+
+  text-align: center;
+}
+
+.login-form input {
+  flex-basis: 100%;
+  box-sizing: border-box;
+
+  font-size: 24px;
+  line-height: 30px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 40px;
+}
+
+
+.login-form__text-input {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.login-form__text-input--error {
+  outline: 2px solid red;
+}
+
+.login-form__text-input:first-child::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+
+  width: 15px;
+  height: 15px;
+  background-image: url("../img/user.png");
+  background-repeat: no-repeat;
+  z-index: 1010;
+}
+
+.login-form__remember-me-checkbox {
+  display: none;
+}
+
+.login-form__remember-me {
+  position: relative;
+
+  padding-left: 60px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 11px;
+}
+
+.login-form__remember-me::after {
+  position: absolute;
+
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  content: "";
+  width: 35px;
+  height: 35px;
+  border: 1px solid @border-light-grey;
+  box-sizing: border-box;
+  z-index: 1;
+
+  background-color: #ffffff;
+}
+
+.login-form  input[type='checkbox']:checked + .login-form__remember-me::before {
+  position: absolute;
+  content: "";
+
+  width: 22px;
+  height: 16px;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background-image: url(../img/checked.png);
+  z-index: 2;
+}

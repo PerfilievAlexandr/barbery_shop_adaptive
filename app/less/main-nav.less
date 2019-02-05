@@ -155,6 +155,14 @@
     background-image: url("../img/login.png");
     opacity: 0.3;
   }
+
+  &:hover {
+    background-color: #755a46;
+  }
+
+  &:active {
+    background-color: #6a4d38;
+  }
 }
 
 @media @mobile-widths-only {
@@ -271,15 +279,14 @@
   }
 
   .main-nav__item--active::after {
-      position: absolute;
-      content: "";
-      bottom: -3px;
-      left: 0;
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
 
-
-      width: 100%;
-      height: 3px;
-      background-color: #826550;
+    width: 100%;
+    height: 3px;
+    background-color: #826550;
 
   }
 
@@ -287,20 +294,35 @@
     font-size: 0;
 
     &::after {
-      top: 30px;
+      top: 28px;
       left: 30px;
+    }
+
+    &:hover {
+      background-color: #000000;
+
+      &::after {
+        background-image: url("../img/login-hover.png");
+        opacity: 1;
+      }
+    }
+
+    &:active {
+      &::after {
+        background-image: url("../img/login.png");
+        opacity: 1;
+      }
     }
   }
 
   .main-nav__item a[href] {
     &:hover {
       color: #826550;
-      background-color: #ffffff;
+      background-color: #000000;
     }
     &:active {
-      color: #ffffff;
+      color: #747474;
       background-color: black;
-      opacity: 0.3;
     }
   }
 }
@@ -333,5 +355,23 @@
       left: 60px;
     }
   }
+
+  .main-nav__item a[href],
+  .main-nav__user-item a {
+
+    &:hover {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    &:active {
+      color: #cacaca;
+    }
+  }
+
+  .main-nav__user-item a:active::after {
+    background-image: url("../img/login-active.png");
+  }
+
 
 }

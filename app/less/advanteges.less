@@ -1,10 +1,14 @@
 @import "mixins";
 @import "variables";
 
+.advanteges {
+  position: relative;
+}
+
 .advanteges__wrapper {
   .conteiner-fluid();
 
-  position: relative;
+
   padding-top: 20px;
   padding-bottom: 60px;
 }
@@ -12,16 +16,16 @@
 .advanteges__wrapper::after {
   content: "";
   position: absolute;
-  width: 50%;
+  overflow: visible;
 
-  bottom: -40px;
+  bottom: 0;
   right: 0;
 
-  border: 40px solid transparent;
-  border-top: 0px solid transparent;
-  border-right: 0px solid transparent;
-  border-left:  300px solid rgb(119, 39, 32);
-
+  width: 100%;
+  height: 0;
+  border-style: solid;
+  border-width: 0 em100 50px 59vw;
+  border-color: transparent transparent red transparent;
 }
 
 .advanteges__items {

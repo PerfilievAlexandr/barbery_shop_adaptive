@@ -9,7 +9,7 @@
 
   text-align: center;
 
-  border-bottom: 1px solid #3e3e3e;
+  border-bottom: 1px solid @border-dark-grey;
 }
 
 .page-footer__contacts {
@@ -26,7 +26,7 @@
   padding-top: 10px;
   padding-bottom: 10px;
 
-  border: 1px solid #3e3e3e;
+  border: 1px solid @border-dark-grey;
 
 
   text-decoration: none;
@@ -34,6 +34,17 @@
 
   font-size: 18px;
   line-height: 24px;
+  font-weight: bold;
+
+  &:hover {
+    border: 1px solid @border-hover-dark-grey;
+  }
+
+  &:active {
+    background-color: #252525;
+    color: #565656;
+  }
+
 }
 
 .page-footer__social .social-links {
@@ -50,7 +61,16 @@
 
   flex-basis: 33.3%;
   height: 100px;
-  border: 1px solid #3e3e3e;
+  border: 1px solid @border-dark-grey;
+
+  &:hover {
+    border: 1px solid @border-hover-dark-grey;
+  }
+
+  &:active {
+    background-color: #252525;
+    color: #565656;
+  }
 }
 
 .social-link:first-child::after {
@@ -67,6 +87,11 @@
   background-image: url("../img/vk-icon-big.png");
 }
 
+.social-link:first-child:active::after {
+  background-image: url("../img/vk-icon-active.png");
+}
+
+
 .social-link:nth-child(2)::after {
   position: absolute;
   content: "";
@@ -79,6 +104,10 @@
   margin-left: -9px;
 
   background-image: url("../img/facebook-icon-big.png");
+}
+
+.social-link:nth-child(2):active::after {
+  background-image: url("../img/facebook-icon-active.png");
 }
 
 .social-link:nth-child(3)::after {
@@ -95,27 +124,32 @@
   background-image: url("../img/insta-icon-big.png");
 }
 
+.social-link:nth-child(3):active::after {
+  background-image: url("../img/insta-icon-active.png");
+}
+
 .page-footer__copyright {
   margin: 0;
 }
 
 .page-footer__copyright-link {
   display: block;
-  box-sizing: border-box;
-  font-size: 18px;
-  line-height: 24px;
-  text-transform: uppercase;
-  font-weight: bold;
-  margin: 0 20px;
-  padding: 15px 0;
-  min-width: 160px;
 
-  text-align: center;
-  text-decoration: none;
-  margin-top: 15px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
 
   color: #ffffff;
-  border: 1px solid #5e5e5e;
+  border: 1px solid @border-dark-grey;
+
+  &:hover {
+    border: 1px solid @border-hover-dark-grey;
+  }
+
+  &:active {
+    background-color: #252525;
+    color: #565656;
+  }
 
 }
 
@@ -165,7 +199,7 @@
 
   .page-footer__contacts {
     float: left;
-    width: 286.6px;
+    width: 320px;
 
     padding: 0;
   }
@@ -185,7 +219,7 @@
 
   .page-footer__social {
     float: left;
-    width: 286.6px;
+    width: 320px;
   }
 
   .page-footer__copyright {

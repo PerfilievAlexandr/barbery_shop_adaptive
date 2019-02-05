@@ -72,6 +72,10 @@
   border: 1px solid #000000;
 }
 
+.reviews__toggles .slider__toggle:first-child {
+  background-color: #000000;
+}
+
 @media @tablet-width {
   .reviews__wrapper {
     position: relative;
@@ -92,11 +96,20 @@
   .reviews__write {
     display: inline-block;
     position: absolute;
-    margin: 0;
 
     top: 35px;
     right: 0;
     cursor: pointer;
+
+    &:hover {
+      border: 1px solid @border-hover-light-grey;
+    }
+
+
+    &:active {
+      background-color: @border-hover-light-grey;
+      color: #a99f95;
+    }
   }
 
   .reviews__items {
@@ -140,11 +153,28 @@
     position: relative;
     display: flex;
     box-sizing: border-box;
-    border: 1px solid #e5ddd5;
+    border: 1px solid @border-light-grey;
     flex-basis: 50px;
     cursor: pointer;
 
     font-size: 0;
+
+    &:hover {
+      border: 1px solid @border-hover-light-grey;
+    }
+
+    &:active {
+      background-color: #d5c9bd;
+      outline: none;
+
+      &::before {
+        border-right: 16px solid #958c84;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
   }
 
   .reviews__prev::before {
@@ -163,13 +193,29 @@
     position: relative;
     display: flex;
     box-sizing: border-box;
-    border: 1px solid #e5ddd5;
+    border: 1px solid @border-light-grey;
     flex-basis: 50px;
     order: 2;
     cursor: pointer;
 
-
     font-size: 0;
+
+    &:hover {
+      border: 1px solid @border-hover-light-grey;
+    }
+
+    &:active {
+      background-color: #d5c9bd;
+      outline: none;
+
+      &::before {
+        border-left: 16px solid #958c84;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
   }
 
   .reviews__next::before {
@@ -198,9 +244,6 @@
     background-color: #ffffff;
   }
 
-  .reviews__toggles .slider__toggle:first-child {
-    background-color: #000000;
-  }
 }
 
 @media @desctop-width {

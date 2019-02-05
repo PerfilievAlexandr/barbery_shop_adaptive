@@ -38,9 +38,34 @@
   border: 1px solid #e5ddd5;
 }
 
+.work__img-wrappper--best {
+  position: relative;
+}
+
+.work__img-wrappper--best::after {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+
+  content: 'Работа месяца';
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  background-color: #826550;
+  color: #ffffff;
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+}
+
 .work__img-wrappper {
-  display: inline-block;
+  display: flex;
+  align-self: center;
   text-align: center;
+  line-height: 0;
 }
 
 .work__description {
@@ -64,15 +89,17 @@
 
   list-style: none;
   margin: 0;
+  margin-bottom: 20px;
   padding: 0;
 }
 
 .work__item {
  // display: block;
+  width: 50%;
   position: relative;
   box-sizing: border-box;
-  margin-right: 60px;
-  margin-bottom: 25px;
+  //margin-right: 60px;
+  //margin-bottom: 25px;
 
 
   font-size: 16px;
@@ -157,7 +184,6 @@
     line-height: 24px;
     text-transform: uppercase;
     font-weight: bold;
-    margin: 0 20px;
     padding: 15px 0;
     min-width: 160px;
 
@@ -165,7 +191,11 @@
     text-decoration: none;
     color: #000000;
 
-    border: 1px solid #e5ddd5;
+    border: 1px solid @border-light-grey;
+
+    &:hover {
+      border: 1px solid @border-hover-light-grey;
+    }
   }
 
 
@@ -185,9 +215,14 @@
     min-width: 270px;
   }
 
+  .work__img-wrappper--best::after {
+    bottom: 395px;
+  }
+
   .work__description {
     display: flex;
     flex-direction: column;
+    width: 100%;
 
     padding-left: 50px;
     padding-right: 50px;
@@ -196,10 +231,7 @@
 
   .work__amenities {
     margin-top: auto;
-  }
-
-  .work__item {
-
+    margin-bottom: 40px;
   }
 
 }
@@ -221,12 +253,29 @@
     margin-right: 0;
   }
 
+  .work__amenities {
+    margin-bottom: 35px;
+  }
+
+  .work__item {
+    width: auto;
+  }
+
   .works__title {
     margin-bottom: 90px;
   }
 
   .work-one .work__img-wrappper {
     min-width: 480px;
+  }
+
+  .work__img-wrappper--best::after {
+    left: 754px;
+    min-width: 165px;
+  }
+
+  .work__description {
+    width: auto;
   }
 
   .work-one .work__description {

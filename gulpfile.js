@@ -1,122 +1,80 @@
-const gulp = require('gulp');
-const less = require('gulp-less');
-const browserSync = require('browser-sync');
+const gulp = require('gulp')
+const server = require('browser-sync')
+const less = require('gulp-less')
 const plumber = require('gulp-plumber')
 const postcss = require('gulp-postcss')
-const autoprefixer = require('gulp-autoprefixer')
+const autoprefixer = require('autoprefixer')
 const mqpacker = require('css-mqpacker')
 const minify = require('gulp-csso')
 const rename = require('gulp-rename')
 const imagemin = require('gulp-imagemin')
-const run = require('run-sequence')
 const del = require('del')
 const concat = require('gulp-concat')
 
-gulp.task('less', function () {
+gulp.task('style', () => {
 	return gulp.src('app/less/**/*.less')
 		.pipe(plumber())
 		.pipe(less())
+		.pipe(postcss([
+			autoprefixer({
+				browsers: [
+					'last 1 version',
+					'last 2 Chrome versions',
+					'last 2 Firefox versions',
+					'last 2 Opera versions',
+					'last 2 edge versions',
+				]
+			}),
+			mqpacker({
+				sort: true
+			})
+		]))
 		.pipe(concat('style.css'))
-		// .pipe(postcss([
-		// 	autoprefixer({
-		// 		browsers: [
-		// 			"last 1 version",
-		// 			"last 2 Chrome versions",
-		// 			"last 2 Firefox versions",
-		// 			"last 2 Opera versions",
-		// 			"last 2 Edge versions"
-		// 		]
-		// 	}),
-		// 	mqpacker({
-		// 		sort: true
-		// 	})
-		// ]))
-		.pipe(gulp.dest('app/css'))
+		.pipe(gulp.dest('dist/css'))
 		.pipe(minify())
 		.pipe(rename('style.min.css'))
-		.pipe(gulp.dest('app/css'))
-		.pipe(browserSync.reload({stream: true}))
-});
+		.pipe(gulp.dest('dist/css'))
+		.pipe(server.reload({stream: true}))
+})
 
-gulp.task('browser-sync', function () {
-	browserSync({
+gulp.task('images', () => {
+	return gulp.src('dist/img/**/*.{png,jpg,gif}')
+
+		.pipe(imagemin([
+			imagemin.optipng({optimizationLever: 3}),
+			imagemin.jpegtran({progressive: true})
+		]))
+		.pipe(gulp.dest('dist/img'))
+})
+
+gulp.task('serve', () => {
+	server({
 		server: {
-			baseDir: 'app'
+			baseDir: 'dist'
 		},
 		notify: false
 	});
+
+	gulp.watch('app/less/**/*.less', gulp.parallel('style'));
+	gulp.watch('app/**/*.html').on('change', gulp.series('clean', 'copy', 'style', server.reload));
+	gulp.watch('app/**/*.js').on('change', gulp.series('clean', 'copy', 'style', server.reload));
 });
 
-gulp.task('images', function () {
-	return gulp.src('build/img/**/*/.{png, jpg, gif}')
-
-		.pipe(imagemin([
-			imagemin.jpegtran({progressive: true}),
-			imagemin.optipng({optimizationLevel: 3})
-		]))
-
-		.pipe(gulp.dest('build/img'))
-})
-
-gulp.task('watch', ['browser-sync', 'less'], function () {
-	gulp.watch('app/less/**/*.less', ['less']);
-	gulp.watch('app/*.html', browserSync.reload)
-	gulp.watch('app/js/**/*.js', browserSync.reload)
-});
-
-gulp.task('build', function (fn) {
-	run(
-		'clean',
-		'copy',
-		'less',
-		'images',
-		fn
-	)
-})
-
-gulp.task('copy', function () {
+gulp.task('copy', () => {
 	return gulp.src([
 		'app/img/**',
 		'app/js/**',
 		'app/*.html'
+
 	], {
-		base: './app'
+		base: 'app'
 	})
-		.pipe(gulp.dest('build'))
+		.pipe(gulp.dest('dist'))
+
 })
 
-gulp.task('clean', function () {
-	return del('build/*')
+gulp.task('clean', () => {
+	return del(['dist/**', '!dist'])
 })
 
-// gulp.task('less', function () {
-//   gulp.src('app/less/**/*/.less')
-//     .pipe(plumber())
-//     .pipe(less())
-//     .pipe(postcss([
-// 	    autoprefixer({browsers: [
-// 			    "last 1 version",
-// 			    "last 2 Chrome versions",
-// 			    "last 2 Firefox versions",
-// 			    "last 2 Opera versions",
-// 			    "last 2 Edge versions"
-// 		    ]})
-//     ]))
-//     .pipe(gulp.dest('app/css'))
-// 	  .pipe(server.reload({stream: true}));
-// })
-//
-// gulp.task('browser-sync', function () {
-// 	server({
-//         server: {
-//             baseDir: 'app'
-//         },
-//         notify: false
-//     });
-// });
-//
-// gulp.task('watch', ['browser-sync', 'less'], function () {
-//     gulp.watch('app/less/**/*.less', ['less']);
-//     gulp.watch('app/index.html', server.reload)
-//     gulp.watch('app/js/**/*.js', server.reload)
-// });
+gulp.task('build', gulp.series('clean', 'copy', 'style', 'images'))

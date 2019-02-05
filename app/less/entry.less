@@ -42,11 +42,22 @@
   padding-top: 14px;
   padding-bottom: 14px;
   margin-bottom: 8px;
-  border: 1px solid #e5ddd5;
+  border: 1px solid @border-light-grey;
 
   font-size: 18px;
   line-height: 30px;
 
+  &:hover {
+    border: 1px solid @border-hover-light-grey;
+  }
+
+  &:active {
+    border: 1px solid #999999;
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .entry__form input:nth-child(5),
@@ -102,7 +113,7 @@
     content: "";
 
     border-radius: 50px;
-    border: 1px solid #e5ddd5;
+    border: 1px solid @border-light-grey;
     box-sizing: border-box;
 
     background-color: #ffffff;
@@ -113,10 +124,30 @@
   }
 }
 
+.entry__beard-model label:hover::before {
+  border: 1px solid @border-hover-light-grey;
+}
+
+.entry__beard-model label:active::before {
+  box-shadow: inset @border-light-grey 0 0 0 15px,
+  inset @border-light-grey 0 0 0 16px;
+  border: 1px solid @border-light-grey;
+}
+
 .entry__beard-model input:checked + label::before {
   box-shadow: inset #ffffff 0 0 0 15px,
-  inset #e5ddd5 0 0 0 16px;
+  inset @border-light-grey 0 0 0 16px;
+}
 
+.entry__beard-model input:checked + label:hover::before {
+  box-shadow: inset #ffffff 0 0 0 15px,
+  inset @border-hover-light-grey 0 0 0 16px;
+}
+
+.entry__beard-model input:checked + label:active::before {
+  box-shadow: inset @border-light-grey 0 0 0 15px,
+  inset @border-light-grey 0 0 0 16px;
+  background-color: @border-light-grey;
 }
 
 .entry__beard-model-admiral::after {
@@ -219,11 +250,20 @@
   content: "";
   width: 35px;
   height: 35px;
-  border: 1px solid #e5ddd5;
+  border: 1px solid @border-light-grey;
   box-sizing: border-box;
   z-index: 1;
 
   background-color: #ffffff;
+}
+
+.entry__additionals label:hover::after {
+  border: 1px solid @border-hover-light-grey;
+}
+
+.entry__additionals label:active::after {
+  border: 1px solid @border-light-grey;
+  background-color: @border-light-grey;
 }
 
 .entry__additionals input[type='checkbox']:checked + label::before {
@@ -241,12 +281,26 @@
   z-index: 2;
 }
 
+.entry__additionals input[type='checkbox']:checked + label:active::before {
+  background-image: none;
+}
+
 .entry__button {
   margin-left: 0;
   margin-right: 0;
+  box-sizing: border-box;
 
-  background-color: #826550;
+  background-color: @light-brown;
   color: #ffffff;
+
+  &:hover {
+    background-color: @real-brown;
+  }
+
+  &:active {
+    color: #9d8d83;
+  }
+
 }
 
 @media @tablet-width {
@@ -287,7 +341,7 @@
 
   #entry__name,
   #entry__surname,
-  #entry__patronymic{
+  #entry__patronymic {
     width: 33.33%;
     box-sizing: border-box;
     margin-bottom: 0;
@@ -298,10 +352,9 @@
     border-right: none;
   }
 
-
   #entry__telephone,
   #entry__email,
-  #entry__info{
+  #entry__info {
     width: 100%;
 
     margin-top: 35px;
@@ -337,7 +390,6 @@
     font-size: 30px;
     line-height: 30px;
   }
-
 
   .entry__additionals label {
     flex-basis: 50%;
